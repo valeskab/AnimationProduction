@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: AnimSceneRestaurant.ma
-//Last modified: Thu, Nov 02, 2023 07:32:32 AM
+//Last modified: Fri, Nov 03, 2023 12:51:47 AM
 //Codeset: 1252
 requires maya "2023";
 currentUnit -l centimeter -a degree -t film;
@@ -9,17 +9,17 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202202161415-df43006fd3";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "45FED01C-475C-A4B0-F0A9-D8A6AC197E97";
+fileInfo "UUID" "4800C0FE-43E2-0F03-6684-099902D70492";
 createNode transform -s -n "persp";
 	rename -uid "00F1DC47-45C7-17FA-AEA6-66B9E49EF429";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 28.262764804249912 38.94321569869642 84.878032901258877 ;
-	setAttr ".r" -type "double3" -16.538352729597488 735.00000000002456 -4.1159406277641702e-16 ;
+	setAttr ".t" -type "double3" 87.352311399743755 39.830562857129614 99.632018029898973 ;
+	setAttr ".r" -type "double3" -14.138352729549808 757.40000000012287 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "845C2027-4A97-19A6-CCFD-869955C2C3FC";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 101.48888690426338;
+	setAttr ".coi" 140.91102660681511;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -80,11 +80,16 @@ createNode mesh -n "pPlaneShape1" -p "pPlane1";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 1 0.5 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 3 ".pt";
+	setAttr ".pt[0]" -type "float3" 0 0 0.32726896 ;
+	setAttr ".pt[1]" -type "float3" 0.3723748 0 0.32726896 ;
+	setAttr ".pt[3]" -type "float3" 0.3723748 0 0 ;
 createNode transform -n "pCube1";
 	rename -uid "E4101D2E-40D4-F8AE-AEE8-6D8EDB49120C";
 	setAttr ".t" -type "double3" -4.087205878613009 2.4374665788736989 -2.7319008279881265 ;
@@ -109,12 +114,14 @@ createNode mesh -n "pPlaneShape2" -p "pPlane2";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 4 ".uvst[0].uvsp[0:3]" -type "float2" 0 0 1 0 0 1 1 1;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 2 ".pt[0:1]" -type "float3"  0 0 0.30642009 0 0 0.30642009;
 	setAttr -s 4 ".vt[0:3]"  -0.5 0 0.5 0.5 0 0.5 -0.5 0 -0.5 0.5 0 -0.5;
 	setAttr -s 4 ".ed[0:3]"  0 1 0 0 2 0 1 3 0 2 3 0;
 	setAttr -ch 4 ".fc[0]" -type "polyFaces" 
@@ -172,12 +179,14 @@ createNode mesh -n "pPlaneShape3" -p "pPlane3";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 1 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 4 ".uvst[0].uvsp[0:3]" -type "float2" 0 0 1 0 0 1 1 1;
 	setAttr ".cuvs" -type "string" "map1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 2 ".pt[2:3]" -type "float3"  0 0 -0.28633693 0 0 -0.28633693;
 	setAttr -s 4 ".vt[0:3]"  -0.5 0 0.5 0.5 0 0.5 -0.5 0 -0.5 0.5 0 -0.5;
 	setAttr -s 4 ".ed[0:3]"  0 1 0 0 2 0 1 3 0 2 3 0;
 	setAttr -ch 4 ".fc[0]" -type "polyFaces" 
